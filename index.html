@@ -50,6 +50,7 @@
       <div class="input-container input-container-intro">
         <label for="userIntroInput">소개</label>
         <input type="text" id="userIntroInput" data-state="1" placeholder="자신과 판매할 상품에 대해 소개해 주세요.">
+        <input type="text" id="myTeamInfo" placeholder="My Team">
       </div>
       <button type="button" class="submit-btn">감귤마켓 시작하기</button>
     </section>
@@ -79,6 +80,7 @@
       const userName = userNameInput.value;
       const userId = userIdInput.value;
       const userIntro = userIntroInput.value;
+      const myTeam = myTeamInfo.value;
       const profileImg = document.querySelector("#imagePre").src;
 
       const data = {
@@ -87,7 +89,7 @@
           "email": email,
           "password": password,
           "accountname": userId,
-          "intro": userIntro,
+          "intro": userIntro + "$" + myTeam,
           "image": profileImg
         }
       }
@@ -120,6 +122,7 @@
     const userNameInput = document.querySelector("#userNameInput");
     const userIdInput = document.querySelector("#userIdInput");
     const userIntroInput = document.querySelector("#userIntroInput");
+    const myTeamInfo = document.querySelector("#myTeamInfo");
 
     const profileImg = document.querySelector("#profileImg");
     // 언제 파일 업로드가 이뤄져야하나?
